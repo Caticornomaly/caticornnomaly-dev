@@ -75,11 +75,14 @@ Edit `styles.css` CSS variables (line 11-20):
 
 ## Deploy to Production
 
-### GitHub Pages (Free)
-1. Push to GitHub
+### GitHub Pages (Free & Automated)
+1. Push to GitHub (main branch)
 2. Go to Settings > Pages
-3. Select your branch
-4. Site will be live at `https://yourusername.github.io/repo-name`
+3. Select **GitHub Actions** as source
+4. The workflow will automatically deploy on every push
+5. Site will be live at `https://yourusername.github.io/repo-name`
+
+**Note**: Update `parent` parameter in `script.js` to use `yourusername.github.io` for Twitch embeds to work!
 
 ### Netlify (Free)
 1. Connect your GitHub repo
