@@ -1,10 +1,12 @@
 // Configuration - Update these with your actual stream and chat details
 const config = {
-    twitchChannel: 'your_twitch_username', // Replace with your Twitch username
-    youtubeVideoId: 'dQw4w9WgXcQ', // Replace with your YouTube video ID or live stream ID
-    twitchChatChannel: 'your_twitch_username', // Replace with your Twitch username for chat
-    streamPlatform: 'twitch' // Options: 'twitch', 'youtube', or 'custom'
+    twitchChannel: 'caticornomaly', // Replace with your Twitch username
+    youtubeStreamId: 'UCPVkpatwR6ukl_wxmXcAtVQ', // Replace with your YouTube video ID or live stream ID
+    twitchChatChannel: 'caticornomaly', // Replace with your Twitch username for chat
+    streamPlatform: 'twitch', // Options: 'twitch', 'youtube', or 'custom'
+    youtubeVideoId: 'dQw4w9WgXcQ'
 };
+let lastSteamType = ""
 
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -43,11 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Load Stream Function
-function loadStream() {
+function loadStream(streamPlayerType="youtube") {
+    if (lastSteamType==streamPlayerType)
+        return
+    
     const streamPlayer = document.getElementById('stream-player');
     let embedHtml = '';
 
-    if (config.streamPlatform === 'twitch') {
+    if (streamPlayerType === 'twitch') {
         embedHtml = `
             <iframe
                 src="https://player.twitch.tv/?channel=${config.twitchChannel}&parent=${window.location.hostname}&muted=false"
@@ -56,25 +61,29 @@ function loadStream() {
                 allowfullscreen>
             </iframe>
         `;
-    } else if (config.streamPlatform === 'youtube') {
+    } else if (streamPlayerType === 'youtube') {
         embedHtml = `
             <iframe
-                src="https://www.youtube.com/embed/${config.youtubeVideoId}?autoplay=1&mute=0"
+                src="https://www.youtube.com/embed/live_stream?autoplay=true&channel=${config.youtubeStreamId}"
                 height="100%"
                 width="100%"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
         `;
-    } else {
+    
+    }
+    else if (streamPlayerType === 'youtube-video') {
         embedHtml = `
-            <div class="placeholder">
-                <div class="placeholder-content">
-                    <h2>Custom Stream</h2>
-                    <p>Configure your stream in script.js</p>
-                </div>
-            </div>
+            <iframe
+                src=src="https://www.youtube.com/embed/${config.youtubeVideoId}?autoplay=1&mute=0"
+                height="100%"
+                width="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         `;
+    
     }
 
     streamPlayer.innerHTML = embedHtml;
@@ -121,10 +130,10 @@ async function checkStreamStatus() {
 
 // Auto-load stream and chat on page load (optional)
 // Uncomment the lines below to auto-load on page load
-// window.addEventListener('load', () => {
-//     loadStream();
-//     loadChat();
-// });
+window.addEventListener('load', () => {
+    loadStream();
+    loadChat();
+});
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {

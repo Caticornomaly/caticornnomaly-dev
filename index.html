@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caticornnomaly - Stream & Dev</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="/">Caticornnomaly</a>
+                <a href="/">Caticornnomaly.dev</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#stream">Stream</a></li>
@@ -43,7 +45,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="stream-switcher">
+                    <button class="stream-switcher-button" onclick="loadStream('youtube')">
+                        
+                        <i class="fa fa-youtube-play stream-icon-yt" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="stream-switcher-button" onclick="loadStream('twitch')">
+                        <i class="fa fa-twitch stream-icon-twt" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
+
         </section>
 
         <!-- Chat & Side Panel -->
@@ -68,7 +81,8 @@
     <section id="about" class="content-section">
         <div class="container">
             <h2>About</h2>
-            <p>Welcome to Caticornnomaly's streaming and development hub! This is where I share my live streams, development work, and connect with the community.</p>
+            <p>Welcome to Caticornnomaly's streaming and development hub! This is where I share my live streams,
+                development work, and connect with the community.</p>
         </div>
     </section>
 
@@ -101,13 +115,15 @@
         <div class="container">
             <p>&copy; 2026 Caticornnomaly. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" target="_blank">Twitter</a>
-                <a href="#" target="_blank">Discord</a>
+                <!-- <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Discord</a> -->
                 <a href="https://github.com/Caticornomaly" target="_blank">GitHub</a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
+
 </html>

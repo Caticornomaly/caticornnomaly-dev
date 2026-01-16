@@ -108,7 +108,8 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
 }
 
 .stream-player {
@@ -116,7 +117,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 95%;
     background-color: var(--darker-bg);
 }
 
@@ -396,6 +397,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -406,4 +408,33 @@ body {
 .chat-section,
 .content-section {
     animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+.stream-switcher {
+    width: 100%;
+    height: 30px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: #3d3d3d;
+}
+
+.stream-icon-yt {
+    color: #FF0000;
+    font-size: 24px;
+    margin: 2px 5px 0px 10px;
+}
+
+.stream-icon-twt {
+    color: #6441a5;
+    font-size: 22px;
+    margin: 2px 5px 0px 10px;
+}
+
+.stream-switcher-button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
