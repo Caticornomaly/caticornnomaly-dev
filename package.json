@@ -1,0 +1,23 @@
+{
+  "name": "caticornnomaly-dev",
+  "version": "1.0.0",
+  "description": "Streamer and developer website with embedded video and chat",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s . -p 3000",
+    "dev": "npx serve -s . -p 3000",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "streaming",
+    "twitch",
+    "youtube",
+    "chat",
+    "website"
+  ],
+  "author": "Caticornnomaly",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
