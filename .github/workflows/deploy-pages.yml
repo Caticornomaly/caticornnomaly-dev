@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository (static site)
+          # Upload only necessary files for the static site
           path: '.'
 
   # Deployment job
