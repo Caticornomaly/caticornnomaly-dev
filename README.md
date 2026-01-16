@@ -161,7 +161,31 @@ The codebase is designed to be easily extensible. Here are some ideas:
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (Automated via GitHub Actions)
+
+This repository includes a GitHub Actions workflow that automatically deploys to GitHub Pages on every push to the `main` branch.
+
+#### Setup Instructions:
+
+1. Go to your repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Push your changes to the `main` branch
+4. The workflow will automatically build and deploy your site
+5. Your site will be available at `https://yourusername.github.io/repository-name`
+
+#### Manual Workflow Trigger:
+
+You can also manually trigger the deployment from the **Actions** tab in your repository.
+
+#### Important Notes:
+
+- Make sure to update the configuration in `script.js` with your actual Twitch/YouTube details
+- For Twitch embeds, add your GitHub Pages domain to the `parent` parameter
+- Example: If your site is at `yourusername.github.io`, update `script.js` to use this domain
+
+### GitHub Pages (Manual Setup)
+
+Alternatively, you can set up GitHub Pages manually:
 
 1. Go to your repository settings
 2. Navigate to "Pages" section
